@@ -1,10 +1,10 @@
 # Documentation
 
-This is a a small React web application (currently seven pages) for a made-up small medical pharmaceutical company. \
+This is a a small React web application (currently seven pages) for a made-up small pharmaceutical company. \
 Principal users are Users (staff and patients), Patients and Prescribers.
 
 With this application you can:
-- Login
+- Log in
 - View Users, Patients, Prescribers
 - Add new Users and Patients
 
