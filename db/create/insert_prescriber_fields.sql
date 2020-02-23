@@ -1,0 +1,20 @@
+INSERT INTO med_prescriber_fields 
+    (prescriber_id, field) VALUES
+    (1, 'Oncology'),
+    (1, 'Immunology'),
+    (1, 'Endocrinology'),
+    (1, 'Pathology'),
+    (1, 'Pediatrics'),
+    (2, 'Anesthesiology'),
+    (2, 'Neurology'),
+    (2, 'Obstetrics'),
+    (2, 'Orthopaedics'),
+    (2, 'Dermatology'),
+    (3, 'Family'),
+    (3, 'Immunology'),
+    (4, 'Endocrinology'),
+    (4, 'Pathology'),
+    (5, 'Ophthalmology'),
+    (5, 'Pediatrics'),
+    (6, 'Pediatrics'),
+    (6, 'Neurology');

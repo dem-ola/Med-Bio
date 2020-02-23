@@ -1,0 +1,25 @@
+INSERT INTO med_diagnosis_symptoms 
+    (diagnosis, symptom) VALUES
+    (1, 'constipation'),
+    (1, 'joint ache'),
+    (1, 'headache'),
+    (2, 'headache'),
+    (3, 'joint ache'),
+    (3, 'mood swings'),
+    (3, 'breast lump'),
+    (3, 'headache'),
+    (4,'low blood pressure'),
+    (5, 'joint ache'),
+    (6, 'headache'),
+    (6, 'chesty cough'),
+    (7, 'headache'),
+    (7,  'coordination issues'),
+    (7, 'low blood pressure'),
+    (8, 'skin rash'),
+    (8, 'headache'),
+    (9, 'mood swings'),
+    (9, 'resting tremor'),
+    (10, 'headache'),
+    (11, 'hallucinations'),
+    (12, 'headache')
+    ;
