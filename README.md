@@ -1,12 +1,12 @@
 # Documentation
 
 This is a a small React web application for an imaginary small medical pharmacy. \
-Principal users are Users (staff, customers), Patients and Prescribers. \
+Principal users are Users (staff and patients), Patients and Prescribers.
 
 With this application you can:
-- Login \
-- View Users, Patients, Prescribers \
-- Add new Users and Patients \
+- Login
+- View Users, Patients, Prescribers
+- Add new Users and Patients
 
 ### Setup
 1. Clone repo
