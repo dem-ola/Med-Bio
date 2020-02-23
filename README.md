@@ -1,6 +1,6 @@
 # Documentation
 
-This is a a small React web application (currently seven pages) for a made-up small pharmaceutical company. \
+This is a a small React web application (currently seven pages) for a notional small pharmaceutical company. \
 Principal users are Users (staff and patients), Patients and Prescribers.
 
 With this application you can:
