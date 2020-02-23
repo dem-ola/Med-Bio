@@ -15,7 +15,6 @@ const headerCols = [
     ['first_name', 'col-medium'],
     ['last_name', 'col-medium'],
     ['date_of_birth', 'col-medium'],
-    ['primary_prescriber', 'col-wide'],
 ]
 
 export default class Patients extends React.Component {   
