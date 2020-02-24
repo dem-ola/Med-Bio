@@ -9,7 +9,7 @@ With this application you can:
 - Add new Users and Patients
 
 ### Setup
-1. Clone repo (includes Node, React, react-dom, Expressjs, Webpack/Babel)
+1. Clone repo (includes Node, React, react-router, Expressjs, Webpack/Babel)
 2. Install MySql
 3. Create the MySql database
 4. Start the Mysql server
