@@ -240,7 +240,7 @@ export class BuildElems extends React.Component {
                                 id={`btn-${id}`}
                                 className='btn btn-verticals'
                                 txt={txt} 
-                                submit={this.props.submit}
+                                onClick={this.props.onClick}
                             />
                         </div>
                     )
@@ -339,7 +339,7 @@ export const Btn = props => {
         <button 
             id={props.id}
             className={props.className}
-            onClick={props.submit}
+            onClick={props.onClick}
             disabled={props.disabled}
             >
             {props.txt}

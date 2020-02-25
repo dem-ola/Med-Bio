@@ -37,7 +37,7 @@ export default class Prescribers extends React.Component {
                         id='btn-submit'
                         className='btn btn-add'
                         txt='Add New User' 
-                        submit={this.submit}
+                        onClick={this.submit}
                     />
                 </div> 
             </div>

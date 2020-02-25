@@ -1498,7 +1498,7 @@ function (_React$Component9) {
               id: "btn-".concat(id),
               className: "btn btn-verticals",
               txt: txt,
-              submit: this.props.submit
+              onClick: this.props.onClick
             })));
           }
 
@@ -1617,7 +1617,7 @@ var Btn = function Btn(props) {
   return React.createElement("button", {
     id: props.id,
     className: props.className,
-    onClick: props.submit,
+    onClick: props.onClick,
     disabled: props.disabled
   }, props.txt);
 };
@@ -2023,7 +2023,7 @@ function (_React$Component) {
         id: "btn-submit",
         className: "btn",
         txt: "Submit",
-        submit: this.submit
+        onClick: this.submit
       })));
     }
   }]);
@@ -2062,7 +2062,7 @@ var patients_Btn = Btn;
 var Table = CustomTable;
 var patients_baseUrl = "".concat(params.backendhost, ":").concat(params.backendport);
 var baseHttpUrl = "".concat(params.backendhost, ":").concat(params.frontendport);
-var headerCols = [['id', 'col-verynarrow'], ['title', 'col-short-medium'], ['first_name', 'col-medium'], ['last_name', 'col-medium'], ['date_of_birth', 'col-medium'], ['primary_prescriber', 'col-wide']];
+var headerCols = [['id', 'col-verynarrow'], ['title', 'col-short-medium'], ['first_name', 'col-medium'], ['last_name', 'col-medium'], ['date_of_birth', 'col-medium']];
 
 var patients_Patients =
 /*#__PURE__*/
@@ -2097,7 +2097,7 @@ function (_React$Component) {
         id: "btn-submit",
         className: "btn btn-add",
         txt: "Add New Patient",
-        submit: this.submit
+        onClick: this.submit
       })));
     }
   }]);
@@ -2167,7 +2167,7 @@ function (_React$Component) {
         id: "btn-submit",
         className: "btn btn-add",
         txt: "Add New Prescriber (Not Active)",
-        submit: this.submit
+        onClick: this.submit
       })));
     }
   }]);
@@ -2239,7 +2239,7 @@ function (_React$Component) {
         id: "btn-submit",
         className: "btn btn-add",
         txt: "Add New User",
-        submit: this.submit
+        onClick: this.submit
       })));
     }
   }]);
@@ -2460,7 +2460,7 @@ function (_React$Component) {
         id: "btn-submit",
         className: "btn",
         txt: "Submit",
-        submit: this.submit
+        onClick: this.submit
       })));
     }
   }]);
@@ -2592,7 +2592,7 @@ function (_React$Component) {
         id: "btn-submit",
         className: "btn",
         txt: "Submit",
-        submit: this.submit
+        onClick: this.submit
       })));
     }
   }]);
@@ -2670,7 +2670,7 @@ function (_React$Component) {
       return React.createElement("div", null, React.createElement("div", null, React.createElement(view_BuildElems, {
         elem: "btn",
         data: this.state.btnLinks,
-        submit: this.submit
+        onClick: this.submit
       })), React.createElement("hr", {
         "class": "medium-line"
       }), React.createElement("div", {
@@ -2680,7 +2680,7 @@ function (_React$Component) {
         data: {
           'users': ['View', 'users']
         },
-        submit: this.submit
+        onClick: this.submit
       })));
     }
   }]);
@@ -2800,7 +2800,7 @@ function (_React$Component) {
         id: "btn-submit",
         className: "btn",
         txt: "Logout",
-        submit: this.submit
+        onClick: this.submit
       })));
     }
   }]);
