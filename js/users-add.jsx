@@ -122,7 +122,7 @@ export default class AddUser extends React.Component {
                         id='btn-submit'
                         className='btn'
                         txt='Submit' 
-                        submit={this.submit}
+                        onClick={this.submit}
                     />
                 </div> 
             </div>

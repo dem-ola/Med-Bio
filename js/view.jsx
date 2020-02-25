@@ -37,7 +37,7 @@ export default class View extends React.Component {
                     <BuildElems 
                         elem='btn' 
                         data={this.state.btnLinks} 
-                        submit={this.submit}
+                        onClick={this.submit}
                     />
                 </div>
                 <hr class='medium-line'/>
@@ -46,7 +46,7 @@ export default class View extends React.Component {
                     <BuildElems
                         elem='btn'
                         data={{'users':['View','users']}}
-                        submit={this.submit}
+                        onClick={this.submit}
                     />
                 </div>
             </div>

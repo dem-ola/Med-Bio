@@ -27,7 +27,7 @@ export default class Logout extends React.Component {
                         id='btn-submit'
                         className='btn'
                         txt='Logout' 
-                        submit={this.submit}
+                        onClick={this.submit}
                     />
                 </div> 
             </div>

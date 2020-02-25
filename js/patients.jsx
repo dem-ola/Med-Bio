@@ -40,7 +40,7 @@ export default class Patients extends React.Component {
                         id='btn-submit'
                         className='btn btn-add'
                         txt='Add New Patient' 
-                        submit={this.submit}
+                        onClick={this.submit}
                     />
                 </div> 
             </div>
