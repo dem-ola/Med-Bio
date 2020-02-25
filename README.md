@@ -3,6 +3,8 @@
 This is a a small React web application (currently seven pages) for a notional small pharmaceutical company. \
 Principal users are Users (staff and patients), Patients and Prescribers.
 
+Please note: works best in laptop view; not currently optimised for mobile
+
 With this application you can:
 - Log in
 - View Users, Patients, Prescribers
@@ -38,12 +40,15 @@ Prescribers -> http://localhost:3000/prescribers
 
 **TODO**
 - User authentication and login tracking (use Redux, Flux ?)
+- change Login link to Logout on user login
+- remove login button on home page if logged in
 - new user change password on first login
 - hash password
 - hiding password input
 - select and edit user, patients, prescribers from list
 - logout page
-- proper home page
 - add prescriptions, orders, visits
+- add media-queries
+
 
 

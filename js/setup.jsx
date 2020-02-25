@@ -12,6 +12,7 @@ export const endpoints = {
     // used in front-end jsx scripts to call backend
     // note: duplicated in server.js for expressjs purposes
     // keep in sync
+    home: 'home',
     login: 'login',
     logout: 'logout',
     view: 'view',
@@ -22,6 +23,7 @@ export const endpoints = {
 }
 
 export const routes = { // subject, route -> for components;
+    'home':  "html/home.html",
     'login':  "html/login.html",
     'logout':  "html/logout.html",
     'view': "html/view.html",
@@ -34,7 +36,7 @@ export const routes = { // subject, route -> for components;
 
 export const navBar = { // subject, route -> for components;
     // note shown in order listed below
-    'home': routes['login'],
+    'home': routes['home'],
     'view': routes['view'],
     'users': routes['users'],
     'patients': routes['patients'],
@@ -42,4 +44,6 @@ export const navBar = { // subject, route -> for components;
     'login':  routes['login'],
     'logout': routes['logout'],
 }
+
+export const homeImage = 'home.jpg';
 

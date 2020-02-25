@@ -35,7 +35,7 @@ export default class Patients extends React.Component {
                     headers={headerCols}
                     transforms={true}
                 />
-                <div id='submission'>
+                <div className='submission'>
                     <Btn 
                         id='btn-submit'
                         className='btn btn-add'

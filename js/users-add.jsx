@@ -117,7 +117,7 @@ export default class AddUser extends React.Component {
                 </div>
                 <div id='add-user-note'> {this.state.addUserNote} </div>
                 <div className='feedback'>{this.state.feedback}</div>
-                <div id='submission'>
+                <div className='submission'>
                     <Btn 
                         id='btn-submit'
                         className='btn'

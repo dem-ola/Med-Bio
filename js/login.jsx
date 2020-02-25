@@ -77,7 +77,7 @@ export default class Login extends React.Component {
                     />
                 </div>
                 <div className='feedback'>{this.state.feedback}</div>
-                <div id='submission'>
+                <div className='submission'>
                     <Btn 
                         id='btn-submit'
                         className='btn'

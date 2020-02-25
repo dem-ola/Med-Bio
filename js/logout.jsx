@@ -22,7 +22,7 @@ export default class Logout extends React.Component {
         return ( 
             <div>
                 <div className='feedback'>This page is under construction</div>
-                <div id='submission'>
+                <div className='submission'>
                     <Btn 
                         id='btn-submit'
                         className='btn'
