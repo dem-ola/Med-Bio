@@ -32,7 +32,7 @@ export default class Prescribers extends React.Component {
                     headers={headerCols}
                     transforms={false}
                 />
-                <div id='submission'>
+                <div className='submission'>
                     <Btn 
                         id='btn-submit'
                         className='btn btn-add'

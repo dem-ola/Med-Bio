@@ -995,6 +995,7 @@ var endpoints = {
   // used in front-end jsx scripts to call backend
   // note: duplicated in server.js for expressjs purposes
   // keep in sync
+  home: 'home',
   login: 'login',
   logout: 'logout',
   view: 'view',
@@ -1005,6 +1006,7 @@ var endpoints = {
 };
 var routes = {
   // subject, route -> for components;
+  'home': "html/home.html",
   'login': "html/login.html",
   'logout': "html/logout.html",
   'view': "html/view.html",
@@ -1017,7 +1019,7 @@ var routes = {
 var navBar = {
   // subject, route -> for components;
   // note shown in order listed below
-  'home': routes['login'],
+  'home': routes['home'],
   'view': routes['view'],
   'users': routes['users'],
   'patients': routes['patients'],
@@ -1025,6 +1027,7 @@ var navBar = {
   'login': routes['login'],
   'logout': routes['logout']
 };
+var homeImage = 'home.jpg';
 // CONCATENATED MODULE: ./js/lib-funcs.js
 
 
@@ -2018,7 +2021,7 @@ function (_React$Component) {
       })), React.createElement("div", {
         className: "feedback"
       }, this.state.feedback), React.createElement("div", {
-        id: "submission"
+        className: "submission"
       }, React.createElement(patients_add_Btn, {
         id: "btn-submit",
         className: "btn",
@@ -2092,7 +2095,7 @@ function (_React$Component) {
         headers: headerCols,
         transforms: true
       }), React.createElement("div", {
-        id: "submission"
+        className: "submission"
       }, React.createElement(patients_Btn, {
         id: "btn-submit",
         className: "btn btn-add",
@@ -2162,7 +2165,7 @@ function (_React$Component) {
         headers: prescribers_headerCols,
         transforms: false
       }), React.createElement("div", {
-        id: "submission"
+        className: "submission"
       }, React.createElement(prescribers_Btn, {
         id: "btn-submit",
         className: "btn btn-add",
@@ -2234,7 +2237,7 @@ function (_React$Component) {
         headers: users_headerCols,
         transforms: false
       }), React.createElement("div", {
-        id: "submission"
+        className: "submission"
       }, React.createElement(users_Btn, {
         id: "btn-submit",
         className: "btn btn-add",
@@ -2455,7 +2458,7 @@ function (_React$Component) {
       }, " ", this.state.addUserNote, " "), React.createElement("div", {
         className: "feedback"
       }, this.state.feedback), React.createElement("div", {
-        id: "submission"
+        className: "submission"
       }, React.createElement(users_add_Btn, {
         id: "btn-submit",
         className: "btn",
@@ -2587,7 +2590,7 @@ function (_React$Component) {
       })), React.createElement("div", {
         className: "feedback"
       }, this.state.feedback), React.createElement("div", {
-        id: "submission"
+        className: "submission"
       }, React.createElement(login_Btn, {
         id: "btn-submit",
         className: "btn",
@@ -2795,7 +2798,7 @@ function (_React$Component) {
       return React.createElement("div", null, React.createElement("div", {
         className: "feedback"
       }, "This page is under construction"), React.createElement("div", {
-        id: "submission"
+        className: "submission"
       }, React.createElement(logout_Btn, {
         id: "btn-submit",
         className: "btn",
@@ -2806,6 +2809,85 @@ function (_React$Component) {
   }]);
 
   return Logout;
+}(React.Component);
+
+
+// CONCATENATED MODULE: ./js/home.jsx
+
+
+function home_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { home_typeof = function _typeof(obj) { return typeof obj; }; } else { home_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return home_typeof(obj); }
+
+function home_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function home_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function home_createClass(Constructor, protoProps, staticProps) { if (protoProps) home_defineProperties(Constructor.prototype, protoProps); if (staticProps) home_defineProperties(Constructor, staticProps); return Constructor; }
+
+function home_possibleConstructorReturn(self, call) { if (call && (home_typeof(call) === "object" || typeof call === "function")) { return call; } return home_assertThisInitialized(self); }
+
+function home_getPrototypeOf(o) { home_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return home_getPrototypeOf(o); }
+
+function home_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function home_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) home_setPrototypeOf(subClass, superClass); }
+
+function home_setPrototypeOf(o, p) { home_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return home_setPrototypeOf(o, p); }
+
+
+
+var messageMajor = 'Welcome!';
+var messageMinor = 'The Premier Prescription Pharmaceutical Company';
+var home_Btn = Btn;
+var home_baseHttpUrl = "".concat(params.backendhost, ":").concat(params.frontendport);
+var img = "".concat(home_baseHttpUrl, "/images/").concat(homeImage);
+
+var home_Home =
+/*#__PURE__*/
+function (_React$Component) {
+  home_inherits(Home, _React$Component);
+
+  function Home(props) {
+    var _this;
+
+    home_classCallCheck(this, Home);
+
+    _this = home_possibleConstructorReturn(this, home_getPrototypeOf(Home).call(this, props));
+    _this.submit = _this.submit.bind(home_assertThisInitialized(_this));
+    return _this;
+  }
+
+  home_createClass(Home, [{
+    key: "submit",
+    value: function submit() {
+      var newPage = window.open('', '_self');
+      var newUrl = "".concat(home_baseHttpUrl, "/").concat(routes['login']);
+      newPage.location.href = newUrl;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement("div", null, React.createElement("div", null, React.createElement("img", {
+        id: "homeImage",
+        src: img
+      }), React.createElement("div", {
+        id: "welcome-msg"
+      }, React.createElement("div", {
+        className: "msg-major"
+      }, messageMajor), React.createElement("div", {
+        className: "msg-minor"
+      }, messageMinor), React.createElement("div", {
+        id: "btn-home-login",
+        className: "submission"
+      }, React.createElement(home_Btn, {
+        id: "btn-submit",
+        className: "btn",
+        txt: "Login",
+        onClick: this.submit
+      })))));
+    }
+  }]);
+
+  return Home;
 }(React.Component);
 
 
@@ -5040,6 +5122,7 @@ function js_setPrototypeOf(o, p) { js_setPrototypeOf = Object.setPrototypeOf || 
 
 
 
+
 var js_Page = Page;
 var js_Header = lib_doms_Header;
 var js_Content = Content;
@@ -5047,6 +5130,7 @@ var js_Footer = Footer;
 var js_Clock = Clock;
 var js_routes = {
   // + route: component, page name for frontend -> react-router; 
+  "/html/home.html": [React.createElement(home_Home, null), 'Welcome'],
   "/html/login.html": [React.createElement(login_Login, null), 'Login'],
   "/html/view.html": [React.createElement(view_View, null), 'View'],
   "/html/users.html": [React.createElement(users_Prescribers, null), 'Users'],
@@ -5060,9 +5144,14 @@ var js_routes = {
 var js_location = window.location.pathname;
 var js_baseUrl = "".concat(params.backendhost, ":").concat(params.backendport);
 var theRoute = js_location.replace(js_baseUrl, '');
+console.log('base', js_baseUrl);
+console.log('loc', js_location);
+console.log('route', theRoute);
+console.log('routes', js_routes);
 var pageName = js_routes[theRoute][1];
 var js_component = js_routes[theRoute][0];
 var navBarLinks = navBar;
+console.log('nav', navBarLinks);
 
 var js_App =
 /*#__PURE__*/
