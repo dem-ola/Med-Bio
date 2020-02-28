@@ -11,7 +11,7 @@ With this application you can:
 - Add new Users and Patients
 
 ### Setup
-1. Clone repo (includes Node, React, react-router, Expressjs, Webpack/Babel)
+1. Clone repo (includes Node, React, react-router, Redux, Expressjs, Webpack/Babel)
 2. Install MySql
 3. Create the MySql database
 4. Start the Mysql server
@@ -39,14 +39,10 @@ Prescribers -> http://localhost:3000/prescribers
 
 
 **TODO**
-- User authentication and login tracking (use Redux, Flux ?)
-- change Login link to Logout on user login
-- remove login button on home page if logged in
 - new user change password on first login
 - hash password
 - hiding password input
 - select and edit user, patients, prescribers from list
-- logout page
 - add prescriptions, orders, visits
 - add media-queries
 

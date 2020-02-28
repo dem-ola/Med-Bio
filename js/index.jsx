@@ -1,7 +1,17 @@
 'use strict'
 
+// react-router
+import {
+    BrowserRouter as Router,
+    Route, Switch
+} from "../node_modules/react-router-dom";
+
+// redux
+import {store} from './store.js';
+
 import * as glob from './setup.jsx';
 import * as dom from "./lib-doms.jsx";
+import * as func from "./lib-funcs.js";
 
 import AddPatient from './patients-add.jsx';
 import Patients from './patients.jsx';
@@ -13,12 +23,6 @@ import View from './view.jsx';
 import Navigation from './navigation.jsx';
 import Logout from './logout.jsx';
 import Home from './home.jsx';
-
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch,
-} from "../node_modules/react-router-dom";
 
 const Page = dom.Page;
 const Header = dom.Header;
@@ -42,21 +46,44 @@ let routes = { // + route: component, page name for frontend -> react-router;
 let location = window.location.pathname;
 const baseUrl = `${glob.params.backendhost}:${glob.params.backendport}`
 let theRoute = location.replace(baseUrl, '');
-console.log('base',baseUrl)
-console.log('loc',location)
-console.log('route',theRoute)
-console.log('routes', routes)
 let pageName = routes[theRoute][1];
 let component = routes[theRoute][0];
 const navBarLinks = glob.navBar;
-console.log('nav',navBarLinks)
 
 class App extends React.Component {
     constructor(props) {
         super(props);
+        this.onLogAction = this.onLogAction.bind(this);
         this.state = {
-            loggedIn: null,            
+            loggedIn: 'null',
         }
+    }
+
+    componentDidMount(){
+        let localStore = func.getStore(glob.params.localStorageKey)
+        if (localStore) { // not null
+            for (let k of Object.keys(this.state)) {
+                this.setState({[k]: localStore[k]})  
+            }
+        }
+    }
+
+    onLogAction () {
+        // we pass this func as a prop to Login/Logout
+        // there: loggedIn status is set up in the redux store
+        // then we call the store here
+        // we don't update state as React doesn't guarantee immediate updates
+        // instead we just update local storage directly
+        // then when the new page opens this sorage is called
+        // by componentDidMount and state is updated there
+        let reduxed = store.getState();
+        let localStore = func.getStore(glob.params.localStorageKey)
+        for (let k of Object.keys(localStore)) {
+            if (Object.keys(reduxed).includes(k)) {
+                localStore[k] = reduxed[k];  
+            }
+        }
+        func.setStore(glob.params.localStorageKey, localStore);
     }
 
     render() {
@@ -65,9 +92,11 @@ class App extends React.Component {
                 id='page-wrap'
                 header={
                     <Header
-                        name = {pageName} 
+                        name = {pageName}
                         time = {<Clock />}
-                        nav = {<Navigation links={navBarLinks} />}
+                        nav = {<Navigation
+                                    isLoggedIn={this.state.loggedIn} 
+                                    links={navBarLinks} />}
                         content = {null}
                     />
                 }
@@ -75,10 +104,16 @@ class App extends React.Component {
                     <Content
                         content = {
                             <Router>
-                            <div>
+                            <Switch>
+                                <Route exact path='/html/login.html'>
+                                    <Login onLogAction={this.onLogAction} />
+                                </Route>
+                                <Route exact path='/html/logout.html'>
+                                    <Logout onLogAction={this.onLogAction} />
+                                </Route>
                                 <Route path={theRoute}>{component}</Route>
-                            </div>
-                            </Router>
+                            </Switch>
+                            </Router>   
                         }
                     />
                 }

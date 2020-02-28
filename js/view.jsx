@@ -40,8 +40,8 @@ export default class View extends React.Component {
                         onClick={this.submit}
                     />
                 </div>
-                <hr class='medium-line'/>
-                <div class='line-comment'>Admin Use Only</div>
+                <hr className='medium-line'/>
+                <div className='line-comment'>Admin Use Only</div>
                 <div>
                     <BuildElems
                         elem='btn'

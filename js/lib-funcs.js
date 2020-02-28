@@ -91,3 +91,38 @@ Date.prototype.toDbString = function() {
 export const concatClassName = (standard, custom=null) => {
     return (!custom) ? standard : standard + ' ' + custom
 }
+
+export function getStore(store) {
+    // get stored file or return null
+    let obj = localStorage.getItem(store);
+    obj = (obj == null || obj == 'undefined') ? null : obj;
+    if (obj == null) return obj
+    return JSON.parse(obj);
+}
+
+export function deepClone(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
+export function setStore(store, data, keys=null) {
+    if (arguments.length < 2) { // need at least store & data
+        throw new Error('Incorrect number of required arguments')
+    }
+    // deep clone here; nb. Object.assign is a shallow copy
+    let toStore = deepClone(data);
+    console.log(300, keys)
+    console.log(310, toStore)
+    if (Array.isArray(keys) && keys.length > 0) {
+        for (let k of Object.keys(toStore)) {
+            console.log(350)
+            if (!keys.includes(k)) delete toStore[k]
+        }
+    }
+    console.log(390)
+    localStorage.setItem(store, JSON.stringify(toStore));
+    console.log(399)
+}
+
+export function clearStore(store) {
+    localStorage.clear(store);
+}
