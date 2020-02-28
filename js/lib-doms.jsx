@@ -53,6 +53,7 @@ export class CustomTable extends React.Component {
         let url = this.props.source;
         let heads = this.props.headers;
         let _records;
+        let i = 0;
         fetch(url, {method: 'GET',})
         .then(resp => {return resp.json()})
         .then((records) => {
@@ -72,6 +73,7 @@ export class CustomTable extends React.Component {
             _records = records;
             return (
                 <BuildElems 
+                    key={i++}
                     elem='row' 
                     isHeads={false} 
                     heads={heads} 
@@ -83,6 +85,7 @@ export class CustomTable extends React.Component {
         .then(() => {
             return (
                 <BuildElems 
+                    key={i++}
                     elem='row' 
                     isHeads={true} 
                     heads={heads} 
@@ -197,19 +200,20 @@ export class Row extends React.Component {
         super(props)
     }
     render() {
-        let r;        
+        let r; 
+        let i = 0;     
         if (this.props.isHeads) {
             r = this.props.heads.map((h) => {
                 let val = h[0].replace(/_/g, ' ');
                 let cName = `row-item-head ${h[1]}`;
-                return <span className={cName}>{val}</span>
+                return <span key={++i} className={cName}>{val}</span>
             }); 
             return <div className='table-row table-row-head'>{r}</div>  
         } else {
             r = this.props.heads.map((h) => {
                 let val = this.props.data[h[0]];
                 let cName = `row-item ${h[1]}`;
-                return <span className={cName}>{val}</span>       
+                return <span key={++i} className={cName}>{val}</span>       
             }) 
             return <div className='table-row'>{r}</div>     
         }
@@ -222,15 +226,15 @@ export class BuildElems extends React.Component {
     }
     render() {
         let collection = [];
+        let i = 0;
         switch(this.props.elem) {
-            
             case 'btn':
                 for (let e of Object.entries(this.props.data)) {
                     let label = e[0];
                     let txt = e[1][0];
                     let id = label+'-name-box';
                     collection.push (
-                        <div className='form-item'>
+                        <div className='form-item' key={++i}>
                             <Label 
                                 id={`label-${id}`}
                                 className='horizontal-label'
@@ -253,7 +257,7 @@ export class BuildElems extends React.Component {
                     let placeholder = e[1];
                     let id = label.replace(' ','')+'-name-box';
                     collection.push (
-                        <div className='form-item'>
+                        <div className='form-item' key={++i}>
                             <Label 
                                 id={`label-${id}`}
                                 className='horizontal-label'
@@ -271,16 +275,14 @@ export class BuildElems extends React.Component {
                 return <div>{collection}</div>
 
             case 'row': 
-                let i = 0;
                 let isHeads = this.props.isHeads;
                 let headers = this.props.heads;
                 let data = this.props.data;
                 let items = isHeads ? headers : data;
                 for (let e of items) {
                     collection.push (
-                        <div className='form-item'>
+                        <div className='form-item' key={++i}>
                            < Row 
-                                key={i++}
                                 isHeads={isHeads}
                                 heads={headers}    
                                 data={e}
@@ -297,8 +299,8 @@ export class BuildElems extends React.Component {
                 for (let e of Object.entries(this.props.data)) {
                     let link = `${this.props.baseHttpUrl}/${e[1]}`
                     collection.push(
-                        <span class='nav-item-box'>
-                            <a  class='nav-item' 
+                        <span className='nav-item-box' key={i++}>
+                            <a  className='nav-item' 
                                 href={link}>{e[0].toUpperCase()}</a> 
                         </span>)
                 };

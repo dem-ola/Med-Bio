@@ -3,6 +3,9 @@
 import * as glob from './setup.jsx';
 import * as dom from "./lib-doms.jsx";
 
+import {store} from './store.js';
+import {setLoggedIn} from './actions'
+
 const Btn = dom.Btn;
 const BuildElems = dom.BuildElems;
 const baseUrl = `${glob.params.backendhost}:${glob.params.backendport}`
@@ -12,7 +15,7 @@ const fields = {
     'password': 'your login password',
 }
 
-export default class Login extends React.Component {   
+class Login extends React.Component {   
     constructor(props) {
         super(props);
         this.handleKeyUp = this.handleKeyUp.bind(this);
@@ -60,7 +63,10 @@ export default class Login extends React.Component {
             if (respJson.msg) {
                 this.setState({feedback: respJson.msg})
             } else {
-                this.setState({feedback: ''});      
+                this.setState({feedback: ''});
+                store.subscribe(() => store.getState())
+                store.dispatch(setLoggedIn('LOGGED-IN'));
+                this.props.onLogAction();
                 newPage.location.href = newUrl;
             } 
         });
@@ -89,4 +95,6 @@ export default class Login extends React.Component {
         )
     }
 }
+
+export default Login;
 

@@ -5,7 +5,10 @@ export const params = {
     backendhost: 'http://localhost',
     backendport: 3000,
     frontendport: 8080, // clearly not relevant in production
+    localStorageKey: 'medbio',
 }
+
+import { Provider } from 'react-redux'
 
 export const endpoints = { 
     // for backend -> expressjs
